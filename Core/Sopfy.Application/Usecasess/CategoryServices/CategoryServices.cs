@@ -1,26 +1,21 @@
 ﻿using Sopfy.Application.Dtos.CategroyDtos;
 using Sopfy.Application.Interfaces;
 using Sopfy.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sopfy.Application.Usecasess.CategoryServices
 {
     public class CategoryServices : ICategoryServices
     {
-        private readonly IRepository<Category> _repostory;
+        private readonly IRepository<Category> _repository;
 
-        public CategoryServices(IRepository<Category> repostory)
+        public CategoryServices(IRepository<Category> repository)
         {
-            _repostory = repostory;
+            _repository = repository;
         }
 
         public async Task CreateCategoryAsync(CreateCategoryDto model)
         {
-            await _repostory.CreateAsync(new Category 
+            await _repository.CreateAsync(new Category 
             {
                 CategoryName = model.CategoryName,
             });
@@ -28,13 +23,13 @@ namespace Sopfy.Application.Usecasess.CategoryServices
 
         public async Task DeleteCategoryAsync(int id)
         {
-            var category = await _repostory.GetByIdAsync(id);
-            await _repostory.DeleteAsync(category);
+            var category = await _repository.GetByIdAsync(id);
+            await _repository.DeleteAsync(category);
         }
 
         public async Task<List<ResultCategoryDto>> GetAllCategortAsync()
         {
-            var categories = await _repostory.GetAllAsync();
+            var categories = await _repository.GetAllAsync();
             return categories.Select(x => new ResultCategoryDto
                 {
                 CategoryId = x.CategoryId,
@@ -44,20 +39,20 @@ namespace Sopfy.Application.Usecasess.CategoryServices
 
         public async Task<GetByIdCategoryDto> GetByIdCategoryAsync(int id)
         {
-            var category = await _repostory.GetByIdAsync(id);
-            var newcategory = new GetByIdCategoryDto
+            var category = await _repository.GetByIdAsync(id);
+            var newCategory = new GetByIdCategoryDto
             {
                 CategoryId = category.CategoryId,
                 CategoryName = category.CategoryName,
             };
-            return newcategory;
+            return newCategory;
         }
 
         public async Task UpdateCategoryAsync(UpdateCategoryDto model)
         {
-            var category = await _repostory.GetByIdAsync(model.CategoryId);
+            var category = await _repository.GetByIdAsync(model.CategoryId);
             category.CategoryName = model.CategoryName;
-            await _repostory.UpdateAsync(category);
+            await _repository.UpdateAsync(category);
         }
     }
 }

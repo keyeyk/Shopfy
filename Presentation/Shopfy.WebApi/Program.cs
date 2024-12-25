@@ -1,4 +1,3 @@
-using Nest;
 using Shopfy.Persistence.Context;
 using Shopfy.Persistence.Repositories;
 using Sopfy.Application.Interfaces;
@@ -8,8 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<AppDbContext>();
-builder.Services.AddScoped(typeof(Nest.IRepository<>), typeof(Nest.IRepository<>));
-builder.Services.AddScoped(typeof(Nest.IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 
 
