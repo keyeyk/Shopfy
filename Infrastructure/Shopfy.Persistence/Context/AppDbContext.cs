@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Sopfy.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace Shopfy.Persistence.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer();
+            optionsBuilder.UseSqlServer("Data Source=KEY\\SQLEXPRESS; database=Shopfy; Integrated Security=True; TrustServerCertificate=True;");
         }
+        public DbSet<Category> Categories{ get; set; }
     }
 }

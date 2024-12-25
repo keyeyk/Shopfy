@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sopfy.Domain", "Core\Sopfy.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopfy.Persistence", "Infrastructure\Shopfy.Persistence\Shopfy.Persistence.csproj", "{2ABCE5B2-47F2-4F50-84B6-73EC7A391BFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopfy.WebApi", "Presentation\Shopfy.WebApi\Shopfy.WebApi.csproj", "{2E9E7E25-FA54-410F-81E7-5AA7AA73EBD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{2ABCE5B2-47F2-4F50-84B6-73EC7A391BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ABCE5B2-47F2-4F50-84B6-73EC7A391BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ABCE5B2-47F2-4F50-84B6-73EC7A391BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E9E7E25-FA54-410F-81E7-5AA7AA73EBD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E9E7E25-FA54-410F-81E7-5AA7AA73EBD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E9E7E25-FA54-410F-81E7-5AA7AA73EBD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E9E7E25-FA54-410F-81E7-5AA7AA73EBD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +49,6 @@ Global
 		{F209F8D2-668B-4D01-96C8-A6307D9FE68B} = {A03352E5-B114-4271-AAF7-0197C2EFE2BA}
 		{D6FE03FD-D8CE-48D2-B1E6-0F4057B56135} = {A03352E5-B114-4271-AAF7-0197C2EFE2BA}
 		{2ABCE5B2-47F2-4F50-84B6-73EC7A391BFC} = {F7EEF001-8F1E-4E12-9491-86068B6A03BA}
+		{2E9E7E25-FA54-410F-81E7-5AA7AA73EBD9} = {A2AC3323-D5A2-4B6F-9CB7-E9F0717EB712}
 	EndGlobalSection
 EndGlobal

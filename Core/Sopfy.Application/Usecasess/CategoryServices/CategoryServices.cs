@@ -11,9 +11,9 @@ namespace Sopfy.Application.Usecasess.CategoryServices
 {
     public class CategoryServices : ICategoryServices
     {
-        private readonly IRepostory<Category> _repostory;
+        private readonly IRepository<Category> _repostory;
 
-        public CategoryServices(IRepostory<Category> repostory)
+        public CategoryServices(IRepository<Category> repostory)
         {
             _repostory = repostory;
         }
