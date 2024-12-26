@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Sopfy.Application.Dtos.CategroyDtos;
+using Sopfy.Application.Dtos.CategoryDtos;
 using Sopfy.Application.Usecasess.CategoryServices;
 
 namespace Shopfy.WebApi.Controllers
@@ -18,7 +18,7 @@ namespace Shopfy.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllCategories()
         {
-            var categories = await _categoryServices.GetAllCategortAsync();
+            var categories = await _categoryServices.GetAllCategoryAsync();
             return Ok(categories);
         }
         [HttpGet("{id}")]

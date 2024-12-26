@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sopfy.Application.Dtos.CategroyDtos
+namespace Sopfy.Application.Dtos.CategoryDtos
 {
     public class CreateCategoryDto
     {
        
-        public int CategoryName { get; set; }
+        public string CategoryName { get; set; }
     }
 }

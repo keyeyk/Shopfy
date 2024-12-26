@@ -1,4 +1,4 @@
-﻿using Sopfy.Application.Dtos.CategroyDtos;
+﻿using Sopfy.Application.Dtos.CategoryDtos;
 using Sopfy.Application.Interfaces;
 using Sopfy.Domain.Entities;
 
@@ -27,25 +27,25 @@ namespace Sopfy.Application.Usecasess.CategoryServices
             await _repository.DeleteAsync(category);
         }
 
-        public async Task<List<ResultCategoryDto>> GetAllCategortAsync()
+        public async Task<List<ResultCategoryDto>> GetAllCategoryAsync()
         {
             var categories = await _repository.GetAllAsync();
             return categories.Select(x => new ResultCategoryDto
-                {
+            {
                 CategoryId = x.CategoryId,
                 CategoryName = x.CategoryName
-                }).ToList();
+            }).ToList();
         }
 
         public async Task<GetByIdCategoryDto> GetByIdCategoryAsync(int id)
         {
             var category = await _repository.GetByIdAsync(id);
-            var newCategory = new GetByIdCategoryDto
+            var newcategory = new GetByIdCategoryDto
             {
                 CategoryId = category.CategoryId,
-                CategoryName = category.CategoryName,
+                CategoryName = category.CategoryName
             };
-            return newCategory;
+            return newcategory;
         }
 
         public async Task UpdateCategoryAsync(UpdateCategoryDto model)

@@ -18,9 +18,18 @@ namespace Shopfy.Persistence.Repositories
         {
             _context = context;
         }
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await _context.Set<T>().FindAsync(id);
+        }
         public async Task CreateAsync(T entity)
         {
             _context.Set<T>().Add(entity);
+            await _context.SaveChangesAsync();
+        }
+        public async Task UpdateAsync(T entity)
+        {
+            _context.Set<T>().Update(entity);
             await _context.SaveChangesAsync();
         }
 
@@ -35,16 +44,9 @@ namespace Shopfy.Persistence.Repositories
             return await _context.Set<T>().ToListAsync();
         }
 
-        public async Task<T> GetByIdAsync(int id)
-        {
-            return await _context.Set<T>().FindAsync(id);
-        }
+       
 
-        public async Task UpdateAsync(T entity)
-        {
-            _context.Set<T>().Update(entity);
-            await _context.SaveChangesAsync();
-        }
+        
 
         Task<T> IRepository<T>.CreateAsync(T entity)
         {

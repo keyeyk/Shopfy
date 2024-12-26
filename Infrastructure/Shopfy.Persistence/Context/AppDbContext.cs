@@ -12,6 +12,7 @@ namespace Shopfy.Persistence.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            // SQL BAĞLANTILARI BURADA  YAPILMAKTADIR.
             optionsBuilder.UseSqlServer("Data Source=KEY\\SQLEXPRESS; database=Shopfy; Integrated Security=True; TrustServerCertificate=True;");
         }
         public DbSet<Category> Categories{ get; set; }

@@ -1,4 +1,4 @@
-﻿using Sopfy.Application.Dtos.CategroyDtos;
+﻿using Sopfy.Application.Dtos.CategoryDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace Sopfy.Application.Usecasess.CategoryServices
 {
     public interface ICategoryServices
     {
-        Task<List<ResultCategoryDto>> GetAllCategortAsync();
+        Task<List<ResultCategoryDto>> GetAllCategoryAsync();
         Task<GetByIdCategoryDto> GetByIdCategoryAsync(int id);
         Task CreateCategoryAsync(CreateCategoryDto model);
         Task UpdateCategoryAsync(UpdateCategoryDto model);

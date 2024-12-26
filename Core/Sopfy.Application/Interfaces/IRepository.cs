@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Sopfy.Application.Interfaces
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<T>
     {
-        Task<List<T>> GetAllAsync();
+        
         Task<T> GetByIdAsync(int id);
         Task<T> CreateAsync(T entity);
         Task<T> UpdateAsync(T entity);
         Task<T> DeleteAsync(T entity);
+        Task<List<T>> GetAllAsync();
     }
 }

@@ -16,7 +16,7 @@ namespace Shopfy.Persistence.Migrations
                 {
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryName = table.Column<int>(type: "int", nullable: false)
+                    CategoryName = table.Column<int>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
